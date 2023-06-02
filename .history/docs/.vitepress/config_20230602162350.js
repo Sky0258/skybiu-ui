@@ -13,6 +13,7 @@ export default {
                 link: '/menu/tButton.md'
             },
             {
+                icon: 'github',
                 text: 'github',
                 link: 'https://github.com/Sky0258/skybiu-ui'
             },

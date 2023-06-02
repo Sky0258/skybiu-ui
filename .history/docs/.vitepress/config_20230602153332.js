@@ -1,4 +1,4 @@
-
+import TUI from 'skybiu-ui';
 export default {
     title: 'skybiu-ui',
     base: '/skybiu-ui/',
@@ -6,15 +6,16 @@ export default {
         siteTitle: "skybiu-ui",
         nav: [{
                 text: '安装指南',
-                link: '/menu/guide.md'
+                link: '../menu/guide.md'
             },
             {
                 text: '组件',
                 link: '/menu/tButton.md'
             },
             {
+                icon: 'github',
                 text: 'github',
-                link: 'https://github.com/Sky0258/skybiu-ui'
+                link: '/2'
             },
             {
                 text: 'npm',

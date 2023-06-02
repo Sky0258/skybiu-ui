@@ -1,4 +1,4 @@
-
+import TUI from 'skybiu-ui';
 export default {
     title: 'skybiu-ui',
     base: '/skybiu-ui/',
@@ -13,6 +13,7 @@ export default {
                 link: '/menu/tButton.md'
             },
             {
+                icon: 'github',
                 text: 'github',
                 link: 'https://github.com/Sky0258/skybiu-ui'
             },
