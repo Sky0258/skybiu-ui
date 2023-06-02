@@ -1,0 +1,28 @@
+{
+  "name": "base-ui",
+  "private": false,
+  "version": "0.0.1",
+  "main": "./dist/base-ui.umd.cjs",
+  "module": "./dist/base-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/base-ui.js",
+      "require": "./dist/base-ui.umd.cjs"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.2.0"
+  }
+}

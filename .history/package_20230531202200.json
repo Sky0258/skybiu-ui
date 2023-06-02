@@ -1,0 +1,33 @@
+{
+  "name": "skyBase-ui",
+  "private": false,
+  "version": "2.1.3",
+  "main": "./dist/skyBase-ui.umd.cjs",
+  "module": "./dist/skyBase-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/skyBase-ui.js",
+      "require": "./dist/skyBase-ui.umd.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "sass": "^1.62.1",
+    "scss": "^0.2.4",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.2.0"
+  }
+}

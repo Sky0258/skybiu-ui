@@ -1,0 +1,23 @@
+{
+  "hash": "cc66232d",
+  "browserHash": "a788de74",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "77ae55e2",
+      "needsInterop": false
+    },
+    "skybiu-ui": {
+      "src": "../../../../node_modules/skybiu-ui/dist/skybiu-ui.js",
+      "file": "skybiu-ui.js",
+      "fileHash": "4f39e68d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ODOPCOSX": {
+      "file": "chunk-ODOPCOSX.js"
+    }
+  }
+}

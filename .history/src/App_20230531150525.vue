@@ -1,0 +1,18 @@
+<template>
+   <div>
+    111111111111
+        <tButton>点击我</tButton>
+   </div>
+</template>
+
+<script>
+export default {
+    name: 'tButton'
+}
+</script>
+<script setup>
+</script>
+
+<style lang='scss' scoped>
+
+</style>

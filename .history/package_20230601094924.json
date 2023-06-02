@@ -1,0 +1,38 @@
+{
+  "name": "skybiu-ui",
+  "private": false,
+  "version": "1.1.2",
+  "main": "./dist/skybiu-ui.umd.cjs",
+  "module": "./dist/skybiu-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/skybiu-ui.js",
+      "require": "./dist/skybiu-ui.umd.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "sass": "^1.62.1",
+    "scss": "^0.2.4",
+    "skybiu-ui": "^1.1.2",
+    "vue": "^2.7.14",
+    "vue-server-renderer": "^2.7.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.2.0",
+    "vuepress": "^1.9.9"
+  }
+}
