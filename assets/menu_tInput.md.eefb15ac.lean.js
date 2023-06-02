@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as s,O as e}from"./chunks/framework.39b9e310.js";const h=JSON.parse('{"title":"tInput 输入框","description":"","frontmatter":{},"headers":[],"relativePath":"menu/tInput.md","filePath":"menu/tInput.md"}'),n={name:"menu/tInput.md"},o=e("",2),l=[o];function p(c,r,i,_,d,u){return a(),s("div",null,l)}const y=t(n,[["render",p]]);export{h as __pageData,y as default};
