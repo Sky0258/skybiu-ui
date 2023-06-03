@@ -8,17 +8,17 @@ import {
 } from "./chunk-ODOPCOSX.js";
 
 // node_modules/skybiu-ui/dist/skybiu-ui.mjs
-var m = (t, e) => {
-  const o = t.__vccOpts || t;
-  for (const [n, l] of e)
-    o[n] = l;
-  return o;
+var m = (e, t) => {
+  const n = e.__vccOpts || e;
+  for (const [l, o] of t)
+    n[l] = o;
+  return n;
 };
-var f = ["disabled"];
-var b = {
+var v = ["disabled"];
+var y = {
   name: "tButton"
 };
-var v = Object.assign(b, {
+var g = Object.assign(y, {
   props: {
     type: {
       type: String,
@@ -34,64 +34,89 @@ var v = Object.assign(b, {
     },
     circle: Boolean
   },
-  setup(t) {
-    const e = t, o = computed(() => [
+  setup(e) {
+    const t = e, n = computed(() => [
       "t-button",
-      `t-button-${e.type}`,
-      e.disabled ? "t-button-disabled" : "",
-      e.round ? "t-button-round" : "",
-      e.circle ? "circle" : "",
-      `${e.size}`
+      `t-button-${t.type}`,
+      t.disabled ? "t-button-disabled" : "",
+      t.round ? "t-button-round" : "",
+      t.circle ? "circle" : "",
+      `${t.size}`
     ]);
-    return (n, l) => (openBlock(), createElementBlock("div", null, [
+    return (l, o) => (openBlock(), createElementBlock("div", null, [
       createBaseVNode("button", {
-        class: normalizeClass(o.value),
-        disabled: t.disabled,
-        onClick: l[0] || (l[0] = (...r) => n.clickEvent && n.clickEvent(...r))
+        class: normalizeClass(n.value),
+        disabled: e.disabled,
+        onClick: o[0] || (o[0] = (...d) => l.clickEvent && l.clickEvent(...d))
       }, [
-        renderSlot(n.$slots, "default", {}, void 0, true)
-      ], 10, f)
+        renderSlot(l.$slots, "default", {}, void 0, true)
+      ], 10, v)
     ]));
   }
 });
-var s = m(v, [["__scopeId", "data-v-5cf21340"]]);
-s.install = (t) => {
-  t.component(s.name, s);
+var a = m(g, [["__scopeId", "data-v-5cf21340"]]);
+a.install = (e) => {
+  e.component(a.name, a);
 };
-var g = ["value"];
-var y = {
+var B = ["type", "value", "placeholder", "disabled"];
+var S = {
   name: "tInput"
 };
-var u = Object.assign(y, {
+var k = Object.assign(S, {
   props: {
-    modelValue: String | Number
+    modelValue: String | Number,
+    placeholder: String,
+    disabled: Boolean,
+    clean: Boolean,
+    type: String
   },
   emits: ["update:modelValue"],
-  setup(t, { emit: e }) {
-    const o = (n) => {
-      e("update:modelValue", n.target.value);
+  setup(e, { emit: t }) {
+    const n = e, l = (r) => {
+      t("update:modelValue", r.target.value);
+    }, o = computed(() => [
+      "t-input",
+      {
+        "t-input-disabled": n.disabled
+      }
+    ]), d = computed(() => [
+      "iconfont",
+      {
+        clean: n.clean && n.modelValue
+      }
+    ]), b = () => {
+      t("update:modelValue", "");
     };
-    return (n, l) => (openBlock(), createElementBlock("div", null, [
+    return (r, V) => (openBlock(), createElementBlock("div", {
+      class: normalizeClass(o.value)
+    }, [
       createBaseVNode("input", {
-        type: "text",
-        value: t.modelValue,
-        onInput: o
-      }, null, 40, g)
-    ]));
+        type: e.type,
+        value: e.modelValue,
+        onInput: l,
+        placeholder: e.placeholder,
+        disabled: e.disabled
+      }, null, 40, B),
+      createBaseVNode("i", {
+        class: normalizeClass(d.value),
+        onClick: b
+      }, "", 2)
+    ], 2));
   }
 });
-u.install = (t) => {
-  t.component(u.name, u);
+var s = m(k, [["__scopeId", "data-v-df934f1a"]]);
+s.install = (e) => {
+  e.component(s.name, s);
 };
-var B = (t) => {
-  t.use(s), t.use(u);
+var I = (e) => {
+  e.use(a), e.use(s);
 };
 var $ = {
-  install: B
+  install: I
 };
 export {
   $ as default,
-  s as tButton,
-  u as tInput
+  a as tButton,
+  s as tInput
 };
 //# sourceMappingURL=skybiu-ui.js.map
