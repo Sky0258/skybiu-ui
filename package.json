@@ -1,13 +1,13 @@
 {
   "name": "skybiu-ui",
   "private": false,
-  "version": "1.1.2",
-  "main": "./dist/skybiu-ui.umd.cjs",
-  "module": "./dist/skybiu-ui.js",
+  "version": "1.1.5",
+  "main": "./dist/skybiu-ui.umd.js",
+  "module": "./dist/skybiu-ui.mjs",
   "exports": {
     ".": {
-      "import": "./dist/skybiu-ui.js",
-      "require": "./dist/skybiu-ui.umd.cjs"
+      "import": "./dist/skybiu-ui.mjs",
+      "require": "./dist/skybiu-ui.umd.js"
     }
   },
   "files": [
@@ -28,7 +28,7 @@
     "less": "^4.1.3",
     "sass": "^1.62.1",
     "scss": "^0.2.4",
-    "skybiu-ui": "^1.1.2",
+    "skybiu-ui": "^1.1.5",
     "vitepress": "^1.0.0-beta.1",
     "vitepress-demoblock": "^1.0.4",
     "vue": "^3.3.4",

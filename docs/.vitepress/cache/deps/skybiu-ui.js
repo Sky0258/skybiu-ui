@@ -4,43 +4,57 @@ import {
   createElementBlock,
   normalizeClass,
   openBlock,
-  renderSlot,
-  unref
+  renderSlot
 } from "./chunk-ODOPCOSX.js";
 
-// node_modules/skybiu-ui/dist/skybiu-ui.js
-var m = (t, o) => {
-  const e = t.__vccOpts || t;
-  for (const [n, a] of o)
-    e[n] = a;
-  return e;
+// node_modules/skybiu-ui/dist/skybiu-ui.mjs
+var m = (t, e) => {
+  const o = t.__vccOpts || t;
+  for (const [n, l] of e)
+    o[n] = l;
+  return o;
 };
-var f = {
+var f = ["disabled"];
+var b = {
   name: "tButton"
 };
-var v = Object.assign(f, {
+var v = Object.assign(b, {
   props: {
     type: {
       type: String,
       default: "default"
       // 默认值 default
-    }
+    },
+    disabled: Boolean,
+    round: Boolean,
+    src: String,
+    size: {
+      size: String,
+      default: ""
+    },
+    circle: Boolean
   },
   setup(t) {
-    const o = t, e = computed(() => [
+    const e = t, o = computed(() => [
       "t-button",
-      `t-button-${o.type}`
+      `t-button-${e.type}`,
+      e.disabled ? "t-button-disabled" : "",
+      e.round ? "t-button-round" : "",
+      e.circle ? "circle" : "",
+      `${e.size}`
     ]);
-    return (n, a) => (openBlock(), createElementBlock("div", {
-      class: normalizeClass(unref(e))
-    }, [
-      createBaseVNode("button", null, [
+    return (n, l) => (openBlock(), createElementBlock("div", null, [
+      createBaseVNode("button", {
+        class: normalizeClass(o.value),
+        disabled: t.disabled,
+        onClick: l[0] || (l[0] = (...r) => n.clickEvent && n.clickEvent(...r))
+      }, [
         renderSlot(n.$slots, "default", {}, void 0, true)
-      ])
-    ], 2));
+      ], 10, f)
+    ]));
   }
 });
-var s = m(v, [["__scopeId", "data-v-a155e9f1"]]);
+var s = m(v, [["__scopeId", "data-v-5cf21340"]]);
 s.install = (t) => {
   t.component(s.name, s);
 };
@@ -53,15 +67,15 @@ var u = Object.assign(y, {
     modelValue: String | Number
   },
   emits: ["update:modelValue"],
-  setup(t, { emit: o }) {
-    const e = (n) => {
-      o("update:modelValue", n.target.value);
+  setup(t, { emit: e }) {
+    const o = (n) => {
+      e("update:modelValue", n.target.value);
     };
-    return (n, a) => (openBlock(), createElementBlock("div", null, [
+    return (n, l) => (openBlock(), createElementBlock("div", null, [
       createBaseVNode("input", {
         type: "text",
         value: t.modelValue,
-        onInput: e
+        onInput: o
       }, null, 40, g)
     ]));
   }
@@ -69,14 +83,14 @@ var u = Object.assign(y, {
 u.install = (t) => {
   t.component(u.name, u);
 };
-var b = (t) => {
+var B = (t) => {
   t.use(s), t.use(u);
 };
-var I = {
-  install: b
+var $ = {
+  install: B
 };
 export {
-  I as default,
+  $ as default,
   s as tButton,
   u as tInput
 };
