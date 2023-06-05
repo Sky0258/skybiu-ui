@@ -1,24 +1,29 @@
 import {
   computed,
   createBaseVNode,
+  createCommentVNode,
   createElementBlock,
+  createTextVNode,
   normalizeClass,
   openBlock,
-  renderSlot
+  popScopeId,
+  pushScopeId,
+  renderSlot,
+  toDisplayString
 } from "./chunk-ODOPCOSX.js";
 
 // node_modules/skybiu-ui/dist/skybiu-ui.mjs
 var m = (e, t) => {
   const n = e.__vccOpts || e;
-  for (const [l, o] of t)
-    n[l] = o;
+  for (const [s, o] of t)
+    n[s] = o;
   return n;
 };
-var v = ["disabled"];
-var y = {
+var B = ["disabled"];
+var $ = {
   name: "tButton"
 };
-var g = Object.assign(y, {
+var k = Object.assign($, {
   props: {
     type: {
       type: String,
@@ -43,26 +48,26 @@ var g = Object.assign(y, {
       t.circle ? "circle" : "",
       `${t.size}`
     ]);
-    return (l, o) => (openBlock(), createElementBlock("div", null, [
+    return (s, o) => (openBlock(), createElementBlock("div", null, [
       createBaseVNode("button", {
         class: normalizeClass(n.value),
         disabled: e.disabled,
-        onClick: o[0] || (o[0] = (...d) => l.clickEvent && l.clickEvent(...d))
+        onClick: o[0] || (o[0] = (...l) => s.clickEvent && s.clickEvent(...l))
       }, [
-        renderSlot(l.$slots, "default", {}, void 0, true)
-      ], 10, v)
+        renderSlot(s.$slots, "default", {}, void 0, true)
+      ], 10, B)
     ]));
   }
 });
-var a = m(g, [["__scopeId", "data-v-5cf21340"]]);
-a.install = (e) => {
-  e.component(a.name, a);
+var i = m(k, [["__scopeId", "data-v-5cf21340"]]);
+i.install = (e) => {
+  e.component(i.name, i);
 };
-var B = ["type", "value", "placeholder", "disabled"];
-var S = {
+var C = ["type", "value", "placeholder", "disabled"];
+var V = {
   name: "tInput"
 };
-var k = Object.assign(S, {
+var x = Object.assign(V, {
   props: {
     modelValue: String | Number,
     placeholder: String,
@@ -72,14 +77,14 @@ var k = Object.assign(S, {
   },
   emits: ["update:modelValue"],
   setup(e, { emit: t }) {
-    const n = e, l = (r) => {
-      t("update:modelValue", r.target.value);
+    const n = e, s = (v) => {
+      t("update:modelValue", v.target.value);
     }, o = computed(() => [
       "t-input",
       {
         "t-input-disabled": n.disabled
       }
-    ]), d = computed(() => [
+    ]), l = computed(() => [
       "iconfont",
       {
         clean: n.clean && n.modelValue
@@ -87,36 +92,99 @@ var k = Object.assign(S, {
     ]), b = () => {
       t("update:modelValue", "");
     };
-    return (r, V) => (openBlock(), createElementBlock("div", {
+    return (v, T) => (openBlock(), createElementBlock("div", {
       class: normalizeClass(o.value)
     }, [
       createBaseVNode("input", {
         type: e.type,
         value: e.modelValue,
-        onInput: l,
+        onInput: s,
         placeholder: e.placeholder,
         disabled: e.disabled
-      }, null, 40, B),
+      }, null, 40, C),
       createBaseVNode("i", {
-        class: normalizeClass(d.value),
+        class: normalizeClass(l.value),
         onClick: b
       }, "", 2)
     ], 2));
   }
 });
-var s = m(k, [["__scopeId", "data-v-df934f1a"]]);
-s.install = (e) => {
-  e.component(s.name, s);
+var u = m(x, [["__scopeId", "data-v-34c7e898"]]);
+u.install = (e) => {
+  e.component(u.name, u);
 };
-var I = (e) => {
-  e.use(a), e.use(s);
+var w = (e) => (pushScopeId("data-v-bce6ec96"), e = e(), popScopeId(), e);
+var z = { class: "message-base" };
+var E = ["type", "title"];
+var N = { key: 0 };
+var O = w(() => createBaseVNode("br", null, null, -1));
+var j = {
+  name: "tMessage"
 };
-var $ = {
-  install: I
+var D = Object.assign(j, {
+  props: {
+    type: String,
+    round: Boolean,
+    clean: Boolean,
+    title: String,
+    show: {
+      show: String,
+      default: true
+    }
+  },
+  setup(e) {
+    const t = e, n = computed(() => [
+      "t-message",
+      "animate__animated animate__fadeInDown",
+      t.type,
+      {
+        round: t.round
+      }
+    ]), s = computed(() => [
+      "iconfont",
+      {
+        clean: t.clean
+      },
+      {
+        title: t.title
+      }
+    ]), o = () => {
+      const l = document.querySelector(".message-base");
+      l.style.display = "none";
+    };
+    return (l, b) => (openBlock(), createElementBlock("div", z, [
+      createBaseVNode("div", {
+        class: normalizeClass(n.value),
+        type: e.type,
+        title: e.title
+      }, [
+        t.title ? (openBlock(), createElementBlock("span", N, [
+          createTextVNode(toDisplayString(t.title), 1),
+          O
+        ])) : createCommentVNode("", true),
+        renderSlot(l.$slots, "default", {}, void 0, true),
+        createBaseVNode("i", {
+          class: normalizeClass(s.value),
+          onClick: o
+        }, "", 2)
+      ], 10, E)
+    ]));
+  }
+});
+var r = m(D, [["__scopeId", "data-v-bce6ec96"]]);
+r.install = (e) => {
+  e.component(r.name, r);
+};
+var M = (e) => {
+  e.use(i), e.use(u), e.use(r);
+};
+var U = {
+  install: M
 };
 export {
-  $ as default,
-  a as tButton,
-  s as tInput
+  U as default,
+  i as tButton,
+  u as tInput,
+  r as tMessage
 };
 //# sourceMappingURL=skybiu-ui.js.map

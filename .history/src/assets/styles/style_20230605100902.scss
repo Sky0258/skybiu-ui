@@ -1,0 +1,25 @@
+$primary: #409EFF;
+$success: #67C23A;
+$warning: #E6A23C;
+$danger: #F56C6C;
+$info: #909399;
+$border: #DCDFE6;
+$outline: #909399;
+$fontColor: #606266;
+
+@font-face {
+    font-family: 'iconfont';
+    /* Project id 3141904 */
+    src: url('//at.alicdn.com/t/c/font_3141904_uo7xckqk3g.woff2?t=1685885518971') format('woff2'),
+        url('//at.alicdn.com/t/c/font_3141904_uo7xckqk3g.woff?t=1685885518971') format('woff'),
+        url('//at.alicdn.com/t/c/font_3141904_uo7xckqk3g.ttf?t=1685885518971') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

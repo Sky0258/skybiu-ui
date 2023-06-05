@@ -1,7 +1,7 @@
 {
   "name": "skybiu-ui",
   "private": false,
-  "version": "1.1.8",
+  "version": "1.1.11",
   "main": "./dist/skybiu-ui.umd.js",
   "module": "./dist/skybiu-ui.mjs",
   "exports": {
@@ -25,12 +25,13 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^1.2.0",
+    "animate.css": "^4.1.1",
     "install": "^0.13.0",
     "less": "^4.1.3",
     "npm": "^9.6.7",
     "sass": "^1.62.1",
     "scss": "^0.2.4",
-    "skybiu-ui": "^1.1.8",
+    "skybiu-ui": "^1.1.11",
     "vitepress": "^1.0.0-beta.1",
     "vitepress-demoblock": "^1.0.4",
     "vue": "^3.3.4",
