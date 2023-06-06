@@ -1,10 +1,9 @@
 <template>
   <div class="container" v-if="type == 'imgUploader'">
     <ul class="imageList">
-      <li v-for="(src, index) in imgList" :key="index" class="animate__animated animate__fadeInUp">
+      <li v-for="(src, index) in srcList" :key="index" class="animate__animated animate__fadeInUp">
         <img :src="src" alt="" />
-        <i class="iconfont imgDelete" @click="deleteImg(index)">&#xe718;</i>
-        <span class="cover"></span>
+        <i class="iconfont imgDelete">&#xe600;</i>
       </li>
     </ul>
     <div class="upContain">
@@ -76,20 +75,20 @@ const props = defineProps({
         default: 'primary'
     },
     fileList: Array,
-    imgList: Array,
 });
 const files = ref(null);
 const open = () => {
   files.value.click();
 };
 
+const srcList = reactive([]);
 
 const getImgFile = (e) => {
     const files = e.target.files;
     for(const file of files) {
         getSrc(file)
         .then((res) => {
-        props.imgList.push(res);
+        srcList.push(res);
         })
         .catch((err) => {
         console.log(err);
@@ -114,11 +113,7 @@ function getSrc(file) {
   });
 }
 const deleteFile = (index) => {
-  props.fileList.splice(index, 1);
-};
-
-const deleteImg = (index) => {
-  props.imgList.splice(index, 1);
+  fileList.splice(index, 1);
 };
 </script>
 
@@ -192,39 +187,22 @@ const deleteImg = (index) => {
   li {
     list-style: none;
     position: relative;
-    cursor: pointer;
-    &:hover .cover{
-        display: block;
-    }
-    &:hover .imgDelete{
-        display: block;
-    }
     img {
       width: 190px;
       height: 193px;
-      
+      &:hover {
+        color: black;
+      }
     }
   }
 }
-.cover {
-    display: inline-block;
-    position: absolute;
-    width: 190px;
-    height: 193px;
-    background-color: black;
-    opacity: 0.5;
-    display: none;
-    top: 0;
-}
+
 .imgDelete {
-    display: none;
     position: absolute;
-    top: 80px;
-    right: 80px;
-    font-size: 32px;
+    top: 10px;
+    right: 10px;
+    font-size: 27px;
     cursor: pointer;
-    z-index: 10;
-    color: white;
     &:hover {
         color: $primary;
     }

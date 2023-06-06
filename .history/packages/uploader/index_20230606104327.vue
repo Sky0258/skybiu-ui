@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-if="type == 'imgUploader'">
     <ul class="imageList">
-      <li v-for="(src, index) in imgList" :key="index" class="animate__animated animate__fadeInUp">
+      <li v-for="(src, index) in srcList" :key="index" class="animate__animated animate__fadeInUp">
         <img :src="src" alt="" />
         <i class="iconfont imgDelete" @click="deleteImg(index)">&#xe718;</i>
         <span class="cover"></span>
@@ -76,7 +76,7 @@ const props = defineProps({
         default: 'primary'
     },
     fileList: Array,
-    imgList: Array,
+    srcList: Array,
 });
 const files = ref(null);
 const open = () => {
@@ -89,7 +89,7 @@ const getImgFile = (e) => {
     for(const file of files) {
         getSrc(file)
         .then((res) => {
-        props.imgList.push(res);
+        props.srcList.push(res);
         })
         .catch((err) => {
         console.log(err);
@@ -114,11 +114,11 @@ function getSrc(file) {
   });
 }
 const deleteFile = (index) => {
-  props.fileList.splice(index, 1);
+  fileList.splice(index, 1);
 };
 
 const deleteImg = (index) => {
-  props.imgList.splice(index, 1);
+  srcList.splice(index, 1);
 };
 </script>
 

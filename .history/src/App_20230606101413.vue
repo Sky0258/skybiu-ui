@@ -1,6 +1,6 @@
 <template>
    <div>
-      <tUploader message="只能上传jpg/png文件，且不超过500kb" :onsuccess="success" :onerror="error" @change="change" multiple  :fileList="fileList" :imgList="imgList" type="fileUploader">点击上传文件</tUploader>
+      <tUploader message="只能上传jpg/png文件，且不超过500kb" :onsuccess="success" :onerror="error" @change="change" multiple  :fileList="fileList" >点击上传文件</tUploader>
    </div>
 </template>
 
@@ -21,8 +21,6 @@ const open = () => {
    }
 }
 const fileList = reactive([]);
-const imgList = reactive([]);
-
 const success = (e) => {
     fileList.unshift(...e.target.files);
 }

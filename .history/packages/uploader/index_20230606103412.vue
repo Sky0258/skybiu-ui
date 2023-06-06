@@ -1,9 +1,9 @@
 <template>
   <div class="container" v-if="type == 'imgUploader'">
     <ul class="imageList">
-      <li v-for="(src, index) in imgList" :key="index" class="animate__animated animate__fadeInUp">
+      <li v-for="(src, index) in srcList" :key="index" class="animate__animated animate__fadeInUp">
         <img :src="src" alt="" />
-        <i class="iconfont imgDelete" @click="deleteImg(index)">&#xe718;</i>
+        <i class="iconfont imgDelete">&#xe645;</i>
         <span class="cover"></span>
       </li>
     </ul>
@@ -76,20 +76,20 @@ const props = defineProps({
         default: 'primary'
     },
     fileList: Array,
-    imgList: Array,
 });
 const files = ref(null);
 const open = () => {
   files.value.click();
 };
 
+const srcList = reactive([]);
 
 const getImgFile = (e) => {
     const files = e.target.files;
     for(const file of files) {
         getSrc(file)
         .then((res) => {
-        props.imgList.push(res);
+        srcList.push(res);
         })
         .catch((err) => {
         console.log(err);
@@ -114,11 +114,7 @@ function getSrc(file) {
   });
 }
 const deleteFile = (index) => {
-  props.fileList.splice(index, 1);
-};
-
-const deleteImg = (index) => {
-  props.imgList.splice(index, 1);
+  fileList.splice(index, 1);
 };
 </script>
 
@@ -219,9 +215,9 @@ const deleteImg = (index) => {
 .imgDelete {
     display: none;
     position: absolute;
-    top: 80px;
-    right: 80px;
-    font-size: 32px;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 10;
     color: white;

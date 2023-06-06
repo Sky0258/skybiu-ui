@@ -89,6 +89,7 @@ const getImgFile = (e) => {
     for(const file of files) {
         getSrc(file)
         .then((res) => {
+            console.log(props.imgList);
         props.imgList.push(res);
         })
         .catch((err) => {
@@ -114,11 +115,11 @@ function getSrc(file) {
   });
 }
 const deleteFile = (index) => {
-  props.fileList.splice(index, 1);
+  fileList.splice(index, 1);
 };
 
 const deleteImg = (index) => {
-  props.imgList.splice(index, 1);
+  imgList.splice(index, 1);
 };
 </script>
 

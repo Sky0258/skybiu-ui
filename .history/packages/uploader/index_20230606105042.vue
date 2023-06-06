@@ -114,7 +114,7 @@ function getSrc(file) {
   });
 }
 const deleteFile = (index) => {
-  props.fileList.splice(index, 1);
+  fileList.splice(index, 1);
 };
 
 const deleteImg = (index) => {
