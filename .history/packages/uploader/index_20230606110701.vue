@@ -69,7 +69,7 @@ const props = defineProps({
     },
     acceptType: {
         type: String,
-        default: ''
+        default: 'image/jpeg'
     },
     buttonType: {
         type: String,
@@ -98,8 +98,10 @@ const getImgFile = (e) => {
 }
 
 const getFile = (e) => {
-    props.fileList.unshift(...e.target.files);
     props.onsuccess(e);
+//   fileList.unshift(...e.target.files);
+//   emit("change", fileList);
+
 };
 
 function getSrc(file) {
@@ -123,6 +125,7 @@ const deleteImg = (index) => {
 <style lang='scss' scoped>
 .container {
     display: flex;
+    margin-top: 100px;
 }
 .t-uploader {
   width: 190px;
@@ -131,7 +134,7 @@ const deleteImg = (index) => {
   border: $border dashed 2px;
   i {
     display: inline-block;
-    margin: 57px 0 10px 77px;
+    margin: 54px 0 10px 77px;
     font-size: 35px;
     color: $fontColor;
     cursor: pointer;
@@ -162,7 +165,7 @@ const deleteImg = (index) => {
   margin-top: 5px;
   li {
     display: inline-block;
-    width: 320px;
+    width: 300px;
     height: 30px;
     line-height: 30px;
     display: flex;
@@ -185,7 +188,6 @@ const deleteImg = (index) => {
 }
 .imageList {
   display: flex;
-  flex-wrap : wrap;
   margin: 0;
   li {
     list-style: none;
@@ -199,7 +201,7 @@ const deleteImg = (index) => {
     }
     img {
       width: 190px;
-      height: 190px;
+      height: 193px;
       
     }
   }

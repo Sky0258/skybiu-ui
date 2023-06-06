@@ -1,17 +1,17 @@
 {
-  "hash": "0c823c84",
-  "browserHash": "b388d68c",
+  "hash": "5355734a",
+  "browserHash": "2bf9c8a7",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "ab5dfdae",
+      "fileHash": "5bf3100e",
       "needsInterop": false
     },
     "skybiu-ui": {
       "src": "../../../../node_modules/skybiu-ui/dist/skybiu-ui.mjs",
       "file": "skybiu-ui.js",
-      "fileHash": "84cb5955",
+      "fileHash": "7076735d",
       "needsInterop": false
     }
   },

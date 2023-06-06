@@ -162,7 +162,7 @@ const deleteImg = (index) => {
   margin-top: 5px;
   li {
     display: inline-block;
-    width: 320px;
+    width: 300px;
     height: 30px;
     line-height: 30px;
     display: flex;

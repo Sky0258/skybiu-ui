@@ -31,7 +31,7 @@
     "npm": "^9.6.7",
     "sass": "^1.62.1",
     "scss": "^0.2.4",
-    "skybiu-ui": "^1.1.14",
+    "skybiu-ui": "^1.1.13",
     "vitepress": "^1.0.0-beta.1",
     "vitepress-demoblock": "^1.0.4",
     "vue": "^3.3.4",
