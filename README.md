@@ -1,7 +1,26 @@
-# Vue 3 + Vite
+---
+layout: home
+title: Skybiu-ui
+titleTemplate: 一个Vue3组件库
+hero:
+  name: skybiu-ui
+  text: 一个Vue3组件库
+  actions:
+    - theme: brand
+      text: 开始
+      link: /menu/guide.md
+    - theme: alt
+      text: 在 github 上查看
+      link: https://github.com/Sky0258/skybiu-ui
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+features:
+  - icon: 💡
+    title: Vue3组件库
+    details: 基于vite打包和JavaScript开发
+  - icon: 📦
+    title: 仅供学习使用
+    details: 倾向于Vue3组件库的学习，请勿用于实际生产项目
+  - icon: 🛠️
+    title: 按需引入
+    details: 直接支持按需引入无需配置任何插件。
+---
